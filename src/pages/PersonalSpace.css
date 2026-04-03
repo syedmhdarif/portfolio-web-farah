@@ -1,0 +1,183 @@
+.personal-space {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal-space-main {
+  flex: 1;
+  padding: 120px 0 80px;
+  background: var(--gradient-hero);
+  position: relative;
+  overflow: hidden;
+}
+
+.personal-space-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.personal-space-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 16px;
+}
+
+.personal-space-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Coming Soon Section */
+.personal-space-coming-soon {
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+.coming-soon-card {
+  background: var(--gradient-card);
+  padding: 48px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--border);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.coming-soon-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+}
+
+.coming-soon-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.coming-soon-card h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.coming-soon-card > p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+.coming-soon-features {
+  list-style: none;
+  display: grid;
+  gap: 24px;
+  text-align: left;
+}
+
+.coming-soon-features li {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.coming-soon-features li:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  transform: translateX(10px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.coming-soon-features h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.coming-soon-features p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.personal-space-cta {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .personal-space-main {
+    padding: 100px 0 60px;
+  }
+
+  .personal-space-title {
+    font-size: 2.5rem;
+  }
+
+  .personal-space-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .coming-soon-card {
+    padding: 32px;
+  }
+
+  .coming-soon-card h2 {
+    font-size: 2rem;
+  }
+
+  .coming-soon-features li {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .personal-space-title {
+    font-size: 2rem;
+  }
+
+  .coming-soon-card {
+    padding: 24px;
+  }
+
+  .coming-soon-icon {
+    font-size: 3rem;
+  }
+
+  .coming-soon-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+  }
+}

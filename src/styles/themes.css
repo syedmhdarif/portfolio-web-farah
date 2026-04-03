@@ -1,0 +1,84 @@
+/* ==========================================
+   THEME 1: BLOSSOM — Floral Rose Garden
+   ========================================== */
+:root,
+[data-theme="blossom"] {
+  /* Primary Colors */
+  --primary: #d4826a;
+  --primary-light: #f2c4b4;
+  --primary-dark: #b5634c;
+  
+  /* Secondary Colors */
+  --secondary: #7da87b;
+  --secondary-light: #b8d8b6;
+  --secondary-dark: #5c8a5a;
+  
+  /* Accent */
+  --accent: #e8a5b9;
+  --accent-light: #f5d5e0;
+  
+  /* Neutrals */
+  --bg-primary: #fff9f7;
+  --bg-secondary: #fef0ec;
+  --bg-card: #ffffff;
+  --text-primary: #3d2c2c;
+  --text-secondary: #6b5555;
+  --text-muted: #9b8585;
+  --border: #f0d5ce;
+  
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #fef0ec 0%, #f5d5e0 50%, #fff9f7 100%);
+  --gradient-section: linear-gradient(180deg, #ffffff 0%, #fef0ec 100%);
+  --gradient-card: linear-gradient(135deg, #ffffff 0%, #fff9f7 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(212, 130, 106, 0.08);
+  --shadow-md: 0 4px 16px rgba(212, 130, 106, 0.12);
+  --shadow-lg: 0 8px 32px rgba(212, 130, 106, 0.16);
+  
+  /* Decorative */
+  --floral-opacity: 0.05;
+  --petal-color: #e8a5b9;
+}
+
+/* ==========================================
+   THEME 2: CLOUDSCAPE — Ethereal Clouds
+   ========================================== */
+[data-theme="cloudscape"] {
+  /* Primary Colors */
+  --primary: #6b8fbf;
+  --primary-light: #a8c4e0;
+  --primary-dark: #4a6fa5;
+  
+  /* Secondary Colors */
+  --secondary: #9b8ec4;
+  --secondary-light: #c8bfe0;
+  --secondary-dark: #7a6db0;
+  
+  /* Accent */
+  --accent: #7bb8c9;
+  --accent-light: #b8dce8;
+  
+  /* Neutrals */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #eef3f8;
+  --bg-card: #ffffff;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --text-muted: #7a8599;
+  --border: #d5dde8;
+  
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #eef3f8 0%, #b8dce8 50%, #f8fafc 100%);
+  --gradient-section: linear-gradient(180deg, #ffffff 0%, #eef3f8 100%);
+  --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(107, 143, 191, 0.08);
+  --shadow-md: 0 4px 16px rgba(107, 143, 191, 0.12);
+  --shadow-lg: 0 8px 32px rgba(107, 143, 191, 0.16);
+  
+  /* Decorative */
+  --floral-opacity: 0.04;
+  --petal-color: #7bb8c9;
+}
