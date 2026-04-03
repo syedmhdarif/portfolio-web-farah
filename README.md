@@ -1,75 +1,100 @@
-# React + TypeScript + Vite
+# 🌺 Farah Amirah — Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Live Demo**: [https://portfolio-web-farah.syedarifjr.workers.dev/](https://portfolio-web-farah.syedarifjr.workers.dev/)
 
-Currently, two official plugins are available:
+A beautiful, responsive portfolio website built with **React + TypeScript + Vite** featuring two elegant themes — Blossom (floral rose garden) and Cloudscape (ethereal clouds).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- 🎨 **Dual Themes** — Toggle between Blossom (pink/green) and Cloudscape (blue/lavender)
+- 📱 **Fully Responsive** — Optimized for mobile, tablet, and desktop
+- 🖱️ **Smooth Navigation** — Smooth scroll to sections from navbar, footer, and hero
+- 📄 **Download Resume** — One-click PDF resume download
+- 📧 **Clickable Contacts** — Email, phone, and LinkedIn are all interactive
+- 🚀 **Personal Space** — Dedicated page for future personal projects & case studies
+- ✨ **Animations** — Subtle CSS animations and touch-friendly interactions
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🛠️ Tech Stack
 
-Note: This will impact Vite dev & build performances.
+- **Frontend**: React 19 + TypeScript
+- **Build Tool**: Vite 8
+- **Routing**: React Router (Hash Router)
+- **Styling**: Pure CSS with custom properties (CSS variables)
+- **Theming**: React Context API
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+- Node.js 18+
+- npm
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```bash
+# Clone the repository
+git clone <repo-url>
+cd portfolio-web-farah
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Available Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run preview  # Preview production build
+npm run lint     # Run ESLint
+npm run stop     # Stop the dev server
 ```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── About/          # About Me + Education timeline
+│   ├── Experience/     # Work experience cards
+│   ├── Footer/         # Footer with contacts & quick links
+│   ├── Hero/           # Hero section with profile photo
+│   ├── Involvement/    # Leadership & activities
+│   ├── Navbar/         # Responsive navigation
+│   ├── Projects/       # Academic project showcases
+│   ├── Skills/         # Skill bars + language cards
+│   └── ThemeToggle/    # Theme switcher button
+├── contexts/           # React Context (ThemeContext)
+├── data/               # Resume content (resume.ts)
+├── pages/              # Additional pages (PersonalSpace)
+├── styles/             # Global styles & theme variables
+├── App.tsx             # Main app with routing
+└── main.tsx            # Entry point
+```
+
+## 🎨 Themes
+
+| Theme | Description |
+|-------|-------------|
+| 🌸 **Blossom** | Soft pink, blush, sage green with floral decorations |
+| ☁️ **Cloudscape** | Soft blues, lavenders, pearl whites with ethereal feel |
+
+## 📱 Mobile Support
+
+- Touch-friendly interactions with `:active` states
+- Responsive grids that collapse to single column
+- Safe area support for notched devices
+- Mobile menu with body scroll lock
+- Optimized tap targets (44px+)
+
+## 📝 Resume
+
+The resume PDF is available for download in the `public/` folder. To update it, replace `public/Resume-Farah-2025.pdf` with the latest version.
+
+## 🌐 Deployment
+
+This site is deployed on Cloudflare Workers Pages.
+
+**Live URL**: [https://portfolio-web-farah.syedarifjr.workers.dev/](https://portfolio-web-farah.syedarifjr.workers.dev/)
