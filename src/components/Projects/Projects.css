@@ -3,10 +3,16 @@
   position: relative;
 }
 
+.projects > .container {
+  max-width: 1100px;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .project-card {
@@ -122,6 +128,10 @@
   .project-title {
     font-size: 1.25rem;
   }
+
+  .project-description {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -133,5 +143,26 @@
     width: 50px;
     height: 50px;
     font-size: 1.75rem;
+  }
+
+  .project-title {
+    font-size: 1.125rem;
+  }
+
+  .project-type {
+    font-size: 0.7rem;
+  }
+
+  .project-impact {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+/* Touch-friendly */
+@media (hover: none) {
+  .project-card:active {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
   }
 }

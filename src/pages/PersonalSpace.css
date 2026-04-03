@@ -158,6 +158,16 @@
     gap: 16px;
     padding: 20px;
   }
+
+  .personal-space-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .personal-space-cta .btn {
+    width: 100%;
+    max-width: 280px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -179,5 +189,33 @@
 
   .feature-icon {
     font-size: 2rem;
+  }
+
+  .coming-soon-features h3 {
+    font-size: 1.25rem;
+  }
+
+  .coming-soon-features p {
+    font-size: 0.9rem;
+  }
+
+  .personal-space-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Touch-friendly */
+@media (hover: none) {
+  .coming-soon-features li:active {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* Safe area for devices with notches */
+@supports (padding: max(0px)) {
+  .personal-space-main {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
   }
 }

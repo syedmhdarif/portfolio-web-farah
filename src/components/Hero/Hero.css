@@ -1,5 +1,6 @@
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,6 +21,7 @@
   opacity: 0.5;
   border-radius: 50%;
   animation: float 6s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -63,7 +65,7 @@
 .hero-contact {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
   margin-bottom: 40px;
 }
 
@@ -80,9 +82,12 @@
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
   border: 1px solid var(--border);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.hero-contact-item:hover {
+.hero-contact-item:hover,
+.hero-contact-item:active {
   background: var(--primary);
   color: white;
   transform: translateY(-3px);
@@ -92,6 +97,7 @@
 
 .hero-contact-icon {
   font-size: 1.125rem;
+  flex-shrink: 0;
 }
 
 .hero-actions {
@@ -108,9 +114,11 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   transition: all 0.3s ease;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
@@ -157,10 +165,16 @@
   position: relative;
   z-index: 2;
   animation: float 4s ease-in-out infinite;
+  overflow: hidden;
+  border: 4px solid var(--bg-card);
 }
 
-.hero-image-emoji {
-  font-size: 140px;
+.hero-image-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
 }
 
 .hero-image-decoration {
@@ -173,6 +187,7 @@
   border-radius: 50%;
   animation: spin 20s linear infinite;
   opacity: 0.5;
+  pointer-events: none;
 }
 
 @keyframes spin {
@@ -193,6 +208,7 @@
   color: var(--text-muted);
   font-size: 0.875rem;
   animation: bounce 2s infinite;
+  pointer-events: none;
 }
 
 .scroll-arrow {
@@ -214,13 +230,49 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .hero-content {
-    grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .hero-name {
+    font-size: 3rem;
+  }
+
+  .hero-image-placeholder {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 60px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
     text-align: center;
+    justify-items: center;
+  }
+
+  .hero-image {
+    order: -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .hero-text {
     max-width: 100%;
+  }
+
+  .hero-name {
+    font-size: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.125rem;
   }
 
   .hero-contact {
@@ -236,25 +288,36 @@
   }
 
   .hero-image-placeholder {
-    width: 260px;
-    height: 260px;
+    width: 200px;
+    height: 200px;
   }
 
-  .hero-image-emoji {
-    font-size: 110px;
+  .hero-bg-decoration {
+    width: 300px;
+    height: 300px;
+    top: 5%;
+    right: -10%;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .hero {
-    padding: 100px 0 60px;
+    padding: 80px 0 50px;
+  }
+
+  .hero-content {
+    gap: 20px;
   }
 
   .hero-name {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .hero-title {
+    font-size: 1rem;
+  }
+
+  .hero-greeting {
     font-size: 1.125rem;
   }
 
@@ -265,27 +328,39 @@
 
   .hero-contact-item {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-name {
-    font-size: 2rem;
+    padding: 12px 16px;
   }
 
   .hero-image-placeholder {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
   }
 
-  .hero-image-emoji {
-    font-size: 90px;
+  .hero-image-decoration {
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
   }
 
   .btn {
-    padding: 12px 20px;
-    font-size: 0.875rem;
+    width: 100%;
+    max-width: 280px;
+    padding: 14px 24px;
+  }
+
+  .hero-scroll-indicator {
+    bottom: 20px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Safe area for devices with notches */
+@supports (padding: max(0px)) {
+  .hero {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
   }
 }

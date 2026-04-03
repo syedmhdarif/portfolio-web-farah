@@ -104,6 +104,8 @@
   border-radius: 10px;
   transition: all 0.3s ease;
   display: block;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .footer-links li a:hover {
@@ -139,11 +141,54 @@
   .footer-title {
     font-size: 1.25rem;
   }
+
+  .footer-contact-item {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
   .footer-content {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .footer {
+    padding: 32px 0 16px;
+  }
+
+  .footer-title {
+    font-size: 1.125rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+
+  .footer-contact-item {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  .footer-reference {
+    padding: 12px;
+  }
+
+  .reference-name {
+    font-size: 0.9rem;
+  }
+
+  .reference-contact {
+    font-size: 0.8rem;
+  }
+
+  .footer-links li a {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
   }
 }

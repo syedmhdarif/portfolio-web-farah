@@ -16,7 +16,6 @@ export function About() {
         <div className="about-content">
           <div className="about-summary animate-fade-in-up delay-2">
             <div className="about-card">
-              <div className="about-card-icon">✨</div>
               <h3>Who I Am</h3>
               <p>{summary}</p>
             </div>

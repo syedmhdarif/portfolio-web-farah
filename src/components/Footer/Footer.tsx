@@ -1,7 +1,50 @@
+import { useLocation } from 'react-router-dom';
 import { personalInfo, references } from '../../data/resume';
 import './Footer.css';
 
+const quickLinks = [
+  { label: 'About Me', href: 'about' },
+  { label: 'Experience', href: 'experience' },
+  { label: 'Academic Projects', href: 'projects' },
+  { label: 'Skills & Languages', href: 'skills' },
+  { label: 'Leadership & Involvement', href: 'involvement' },
+];
+
+function scrollToSection(sectionId: string) {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const offset = 80;
+    const top = element.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+}
+
 export function Footer() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/' || location.pathname === '';
+
+  const handleQuickLinkClick = (sectionId: string, e: React.MouseEvent) => {
+    e.preventDefault();
+
+    if (!isHomePage) {
+      window.location.href = `/#/${sectionId}`;
+      setTimeout(() => scrollToSection(sectionId), 200);
+    } else {
+      scrollToSection(sectionId);
+    }
+  };
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    if (!isHomePage) {
+      window.location.href = '/#/';
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 200);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="container">
@@ -48,12 +91,19 @@ export function Footer() {
           <div className="footer-section">
             <h3 className="footer-title">Quick Links</h3>
             <ul className="footer-links">
-              <li><a href="#about">About Me</a></li>
-              <li><a href="#experience">Experience</a></li>
-              <li><a href="#projects">Academic Projects</a></li>
-              <li><a href="#skills">Skills & Languages</a></li>
-              <li><a href="#involvement">Leadership & Involvement</a></li>
-              <li><a href="/personal-space">Personal Space</a></li>
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={`#${link.href}`}
+                    onClick={(e) => handleQuickLinkClick(link.href, e)}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a href="/personal-space">Personal Space</a>
+              </li>
             </ul>
           </div>
         </div>

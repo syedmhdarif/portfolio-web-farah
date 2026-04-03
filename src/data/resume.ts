@@ -4,7 +4,7 @@ export const personalInfo = {
   tagline: 'First-Class Honours Graduate | Master\'s Candidate | Passionate about Ethical Financial Solutions',
   email: 'frhyzuru@gmail.com',
   phone: '+6019-4180531',
-  linkedin: 'https://www.linkedin.com/in/farah-amirah-0b7365242',
+  linkedin: 'https://www.linkedin.com/in/farah-amirah-zulkifli-0b7365242/',
   location: 'Kedah, Malaysia',
   resumeUrl: '/Resume-Farah-2025.pdf',
 };

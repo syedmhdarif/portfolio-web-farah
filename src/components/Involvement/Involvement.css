@@ -3,10 +3,14 @@
   position: relative;
 }
 
+.involvement > .container {
+  max-width: 1100px;
+}
+
 /* Leadership Section */
 .leadership-section {
   max-width: 1000px;
-  margin-bottom: 48px;
+  margin: 0 auto 48px;
 }
 
 .leadership-section-title {
@@ -86,7 +90,8 @@
 
 /* Involvements Section */
 .involvements-section {
-  max-width: 1200px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .involvements-section-title {
@@ -194,6 +199,11 @@
   .involvement-card {
     padding: 24px;
   }
+
+  .leadership-responsibility {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -204,5 +214,45 @@
 
   .involvement-title {
     font-size: 1.25rem;
+  }
+
+  .leadership-card {
+    padding: 20px;
+  }
+
+  .involvement-card {
+    padding: 20px;
+  }
+
+  .leadership-role {
+    font-size: 1.125rem;
+  }
+
+  .leadership-project {
+    font-size: 1rem;
+  }
+
+  .involvement-highlight {
+    padding: 10px 10px;
+    font-size: 0.9rem;
+  }
+
+  .involvement-event {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+  }
+}
+
+/* Touch-friendly */
+@media (hover: none) {
+  .leadership-responsibility:active,
+  .involvement-highlight:active {
+    transform: translateX(4px);
+    background: var(--primary-light);
+  }
+
+  .involvement-card:active {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
   }
 }
