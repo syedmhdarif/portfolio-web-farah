@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { personalInfo, references } from '../../data/resume';
 import './Footer.css';
 
@@ -21,27 +21,17 @@ function scrollToSection(sectionId: string) {
 
 export function Footer() {
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/' || location.pathname === '';
 
   const handleQuickLinkClick = (sectionId: string, e: React.MouseEvent) => {
     e.preventDefault();
 
     if (!isHomePage) {
-      window.location.href = `/#/${sectionId}`;
+      navigate(`/#/${sectionId}`);
       setTimeout(() => scrollToSection(sectionId), 200);
     } else {
       scrollToSection(sectionId);
-    }
-  };
-
-  const handleLogoClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-
-    if (!isHomePage) {
-      window.location.href = '/#/';
-      setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 200);
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -110,7 +100,7 @@ export function Footer() {
 
         <div className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.</p>
-          <p className="footer-credit">Built with ❤️ and React</p>
+          <p className="footer-credit">Built with ❤️</p>
         </div>
       </div>
     </footer>
